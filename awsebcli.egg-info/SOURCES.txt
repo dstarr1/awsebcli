@@ -2,6 +2,7 @@ CHANGES.rst
 LICENSE.txt
 MANIFEST.in
 README.rst
+setup.cfg
 setup.py
 awsebcli.egg-info/PKG-INFO
 awsebcli.egg-info/SOURCES.txt

@@ -1130,9 +1130,10 @@ def ssh_into_instance(instance_id, region, keep_open=False):
     except KeyError:
         # It's possible this instance is in a private subnet, we should see
         # if it has a PrivateIpAddress and PrivateDnsName
-        if 'PrivateIpAddress' in instance and 'PrivateDnsName' in instance:
-            #ip = instance['PrivateDnsName']
-            ip = instance['PrivateIpAddress']
+        #if 'PrivateIpAddress' in instance and 'PrivateDnsName' in instance:
+        #    ip = instance['PrivateIpAddress']
+        if 'PrivateDnsName' in instance:
+            ip = instance['PrivateDnsName']
         else:
             raise NotFoundError(strings['ssh.noip'])
     security_groups = instance['SecurityGroups']
